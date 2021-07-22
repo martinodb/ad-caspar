@@ -160,6 +160,12 @@ Barack Obama became the president of United States in 2009.
 1  clauses in Low Knowledge Base
 ```
 
+### Automatic knowledge learning
+
+This prototype gives the change to feed automatically the Clauses KB from file text, by setting the parameter FILE_KB_NAME (AGENT section)
+with the command feed(). Three examples knowledge base of increasing size are available fon testing purpuses: west25.txt, west104.txt, west303.txt.
+
+
 ### Querying the bot
 
 A detailed overview of how the wh-questions are treated is provided [here](https://github.com/fabiuslongo/ad-caspar/blob/master/wquestions.md).
