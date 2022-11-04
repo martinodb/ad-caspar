@@ -22,7 +22,7 @@ s2() >> [simulate_sensor("Be", "Temperature", "25")]
 make_feed() / TEST(X) >> [-TEST(X), reset_ct(), parse_rules(X), parse_deps(), feed_mst(), process_mst(), log_cmd("Feed", X), show_ct(), make_feed()]
 make_feed() >> [show_line("\nFeeding KBs ended.\n")]
 
-# Feeding Clauses KB with sentences in feed.txt
+# Feeding Clauses KB with sentences in FILE_KB_NAME (config.ini)
 feed() >> [show_line("\nFeeding KBs from file....\n"), +WAKE("ON"),  +LISTEN("ON"), feed_kbs(), make_feed()]
 
 
