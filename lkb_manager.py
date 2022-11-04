@@ -84,7 +84,7 @@ class ManageLKB(object):
             print(cls['value'])
             print(cls['features'])
             print(cls['sentence'])
-        return myclauses.count()
+        return clauses.count_documents({})
 
 
     def clear_lkb(self):
