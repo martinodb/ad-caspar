@@ -48,7 +48,7 @@ The address of a MongoDB server must be specified by changing the value of HOST 
 
 ```sh
 > python -m pip install spacy
-> python -m spacy download en_core_web_md
+> python -m spacy download en_core_web_lg
 ```
 
 
@@ -66,9 +66,20 @@ from python console:
 > nltk.download('wordnet')
 ```
 
-### python-telegram-bot
+### Telegram bot
+
+---------------
+
 ```sh
 > python -m pip install python-telegram-bot
+```
+
+### MongoDB (Docker use case)
+
+---------------
+
+```sh
+> docker-compose -f mongo.yaml up
 ```
 
 ### pymongo

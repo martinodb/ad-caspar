@@ -6,7 +6,7 @@ class ManageLKB(object):
     def __init__(self, host):
 
         self.host = host
-        self.client = pymongo.MongoClient(self.host)
+        self.client = pymongo.MongoClient(self.host, username='root', password='example')
         self.reason_keys = []
         self.confidence = 0.0
 
