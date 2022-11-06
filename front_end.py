@@ -43,7 +43,9 @@ chkb() >> [log_op(">>> Flushing High Clauses KB..."), clear_hkb()]
 clkb() >> [log_op(">>> Flushing Low Clauses KB..."), clear_lkb()]
 
 # chatbot wake word
-+message(C, "hello") / WAIT(W) >> [Reply(C, "Hello!"), +WAKE("ON"), +CHAT_ID(C), Timer(W).start()]
++message(C, "hello") / WAIT(W) >> [Reply(C, "Hello!"), +WAKE("ON"), +CHAT_ID(C), clear_hkb(), Timer(W).start()]
++message(C, "forget") / WAIT(W) >> [Reply(C, "Okay, short term memory is gone..."), +WAKE("ON"), +CHAT_ID(C), clear_hkb(), clear_lkb(), Timer(W).start()]
++message(C, "forget all") / WAIT(W) >> [Reply(C, "Okay, short and long term memory are gone..."), +WAKE("ON"), +CHAT_ID(C), Timer(W).start()]
 +message(C, X) / WAKE("ON") >> [reset_ct(), +CHAT_ID(C), +MSG(X), manage_msg(), Timer(W).start()]
 
 # Assertion management

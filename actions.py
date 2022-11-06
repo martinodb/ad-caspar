@@ -41,6 +41,9 @@ GEN_EXTRA = config.getboolean('GEN', 'GEN_EXTRA')
 GEN_EXTRA_POS = config.get('GEN', 'EXTRA_GEN_POS').split(", ")
 
 HOST = config.get('LKB', 'HOST')
+USER = config.get('LKB', 'USER')
+PASSWORD = config.get('LKB', 'PASSWORD')
+
 LKB_USAGE = config.getboolean('LKB', 'LKB_USAGE')
 MIN_CONFIDENCE = config.getfloat('LKB', 'MIN_CONFIDENCE')
 EMPTY_HKB_AFTER_REASONING = config.getboolean('LKB', 'EMPTY_HKB_AFTER_REASONING')
@@ -65,7 +68,7 @@ fol_manager = ManageFols(VERBOSE, LANGUAGE)
 kb_fol = FolKB([])
 
 # Lower Knowledge Base Manager
-lkbm = ManageLKB(HOST)
+lkbm = ManageLKB(HOST, USER, PASSWORD)
 
 # Telegram bot
 BOT = None

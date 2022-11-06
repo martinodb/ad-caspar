@@ -273,10 +273,13 @@ config = configparser.ConfigParser()
 config.read('config.ini')
 exec_occur_check = config.getboolean('REASONING', 'OCCUR_CHECK')
 HOST = config.get('LKB', 'HOST')
+USER = config.get('LKB', 'USER')
+PASSWORD = config.get('LKB', 'PASSWORD')
 LKB_USAGE = config.getboolean('LKB', 'LKB_USAGE')
 
 # Lower Knowledge Base Manager
-lkbm = ManageLKB(HOST)
+lkbm = ManageLKB(HOST, USER, PASSWORD)
+
 
 # ______________________________________________________________________________
 

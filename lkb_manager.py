@@ -3,10 +3,12 @@ from bson.objectid import ObjectId
 
 
 class ManageLKB(object):
-    def __init__(self, host):
+    def __init__(self, host, user, password):
 
         self.host = host
-        self.client = pymongo.MongoClient(self.host, username='root', password='example')
+        self.user = user
+        self.password = password
+        self.client = pymongo.MongoClient(self.host, username=self.user, password=self.password)
         self.reason_keys = []
         self.confidence = 0.0
 
