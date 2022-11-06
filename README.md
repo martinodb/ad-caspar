@@ -77,6 +77,7 @@ from python console:
 ### MongoDB (Docker use case)
 
 ---------------
+In the case of using a mongoDB container, the latter can be accessed by the link: http://localhost:8081/ (user/password are set in config.ini).
 
 ```sh
 > docker-compose -f mongo.yaml up
