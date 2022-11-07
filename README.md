@@ -77,7 +77,7 @@ from python console:
 ### MongoDB (Docker use case)
 
 ---------------
-In the case of using a mongoDB container, the latter can be accessed by the link: http://localhost:8081/ (user/password are set in config.ini).
+In the case of using a mongoDB container, the latter can be accessed by the link: http://localhost:8087/ (user/password are set in config.ini).
 
 ```sh
 > docker-compose -f mongo.yaml up
@@ -175,7 +175,7 @@ Barack Obama became the president of United States in 2009.
 ### Automatic knowledge learning
 
 This prototype gives the change to feed automatically the Clauses KB from file text, set with the parameter FILE_KB_NAME (AGENT section),
-by the means of the command feed(). Three examples knowledge base of increasing size are available for testing purposes: west25.txt, west104.txt, west303.txt.
+by the means of the command *feed()* given in the phidias prompt. Three examples knowledge base of increasing size are available for testing purposes: *west25.txt*, *west104.txt*, *west303.txt*.
 
 
 ### Querying the bot
