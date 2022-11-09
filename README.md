@@ -33,8 +33,8 @@ The address of a MongoDB server must be specified by changing the value of HOST 
 ```
 ##### additional package needed (Linux)
 ```sh
-> python -pip install readline
-> python -pip install parse
+> pip install readline
+> pip install parse
 ```
 ##### additional package needed (Windows)
 ```sh
@@ -64,6 +64,7 @@ from python console:
 ```sh
 > import nltk
 > nltk.download('wordnet')
+> nltk.download('omw-1.4')
 ```
 
 ### Telegram bot
