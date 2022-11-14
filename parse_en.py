@@ -170,35 +170,6 @@ class Parse(object):
         return result
 
 
-    def get_enc_deps(self, input_text):
-
-        nlp = self.get_nlp_engine()
-        doc = nlp(input_text)
-        self.last_sentence = input_text
-
-        enc_deps = []
-        offset_dict = {}
-
-        for token in doc:
-            enc_dep = []
-            enc_dep.append(token.dep_)
-            #enc_dep.append(token.head.idx)
-            enc_dep.append(token.head.text)
-
-            offset_dict[token.idx] = token.head.text
-
-            #enc_dep.append(token.idx)
-            enc_dep.append(token.text)
-
-            offset_dict[token.idx] = token.text
-
-            enc_deps.append(enc_dep)
-
-        self.offset_dict = offset_dict
-
-        return enc_deps
-
-
 
     def get_deps(self, input_text, LEMMATIZED):
 
@@ -455,25 +426,17 @@ class Parse(object):
 
 
 def main():
-    VERBOSE = True
 
-    parser = Parse(VERBOSE)
+    # pos=VERB, NOUN, ADJ, ADV
+    syns = wordnet.synsets("wise", pos=wordnet.ADJ, lang="eng")
 
-    LEMMMATIZED = True
-    sentence = "The world is yours"
-    deps = parser.get_deps(sentence, LEMMMATIZED)
-    parser.set_last_deps(deps)
-    ner = parser.get_last_ner()
-    print("\nner: ", ner)
+    for synset in syns:
 
-    print("\n" + str(deps))
-
-    """
-    MST = parser.create_MST(deps, 'e', 'x')
-    print("\nMST: \n" + str(MST))
-    """
-
-
+       print("\nsynset: ", synset.name())
+       print("gloss: ", synset.definition())
+       print("lemmas: ", synset.lemmas())
+       for s in synset.examples():
+           print("#synset example: ", s)
 
 
 if __name__ == "__main__":
