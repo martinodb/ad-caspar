@@ -4,13 +4,16 @@ import time
 import telegram
 import configparser
 
+import os
+
 
 class TIMEOUT(Reactor): pass
 class message(Reactor): pass
 
 config = configparser.ConfigParser()
 config.read('config.ini')
-TELEGRAM_TOKEN = config.get('AGENT', 'TELEGRAM_TOKEN')
+# TELEGRAM_TOKEN = config.get('AGENT', 'TELEGRAM_TOKEN')
+TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
 
 
 class HotwordDetect(Sensor):
